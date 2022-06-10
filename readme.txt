@@ -18,6 +18,14 @@ git remote add origin https://github.com/funmonkee/bicep1.git
 git branch -M main
 git push -u origin main
 
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin <https://github.com/funmonkee/bicep1.git>
+git push -u origin main
+
 commands
 
 az account list
@@ -38,7 +46,15 @@ az deployment group create \
   --parameters environmentType=nonprod
 
 ex2
+...
 
+ex3
 az deployment group create \
   --template-file main.bicep \
   --parameters environmentType=nonprod
+
+
+ex4
+  az deployment group create \
+  --template-file main.bicep \
+  --parameters main.parameters.dev.json

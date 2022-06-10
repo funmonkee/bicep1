@@ -58,3 +58,23 @@ ex4
   az deployment group create \
   --template-file main.bicep \
   --parameters main.parameters.dev.json
+
+  complex007
+  C0mplexPassw0rd
+
+  keyVault007ts
+
+keyVaultName='keyVault007ts' # A unique name for the key vault.
+login='complex007' # The login that you used in the previous step.
+password='C0mplexPassw0rd' # The password that you used in the previous step.
+
+az keyvault create --name $keyVaultName --location westus --enabled-for-template-deployment true
+az keyvault secret set --vault-name $keyVaultName --name "sqlServerAdministratorLogin" --value $login
+az keyvault secret set --vault-name $keyVaultName --name "sqlServerAdministratorPassword" --value $password
+
+# keyvault id
+az keyvault show --name $keyVaultName --query id --output tsv
+> /subscriptions/82074a21-3b88-451b-88bf-4d86c81c6064/resourceGroups/testrg/providers/Microsoft.KeyVault/vaults/keyVault007ts
+
+ex5
+

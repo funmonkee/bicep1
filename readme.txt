@@ -78,3 +78,4 @@ az keyvault show --name $keyVaultName --query id --output tsv
 
 ex5
 
+ex6
